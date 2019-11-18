@@ -1,0 +1,110 @@
+.settingpage-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    /* visibility:hidden; */
+    display: none;
+    overflow: hidden;
+}
+.settingpage {
+    width:100%;
+    height: 100%;
+    background-image: linear-gradient(to right,#1F2234,#313651,#1F2234);
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+    align-items:center;
+    justify-content:space-between;
+}
+/* 设置高度是为了兼容低版本chrome flex为column排版时，子元素无法继承height */
+.s-head{
+    -webkit-flex:1;
+    width:100%;
+    height: 14.28%;
+}
+.s-tab{
+    -webkit-flex: 1;
+    width: 100%;
+    height: 14.28%;
+}
+.s-setting{
+    -webkit-flex:4;
+    width: 100%;
+    height: 57.14%;
+}
+.s-footer{
+    -webkit-flex:1;
+    width: 100%;
+    height: 14.28%;
+}
+.s-title{
+    width:45%;
+    height: 40%;
+    font-size: 2.2rem;
+}
+
+.s-setting-list{
+    width:90%;
+    height: 100%;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.s-setting-list > div:not(:last-child){
+    width:21%; 
+    height: 42%;
+    border-radius:1vw 1vw;
+    display:-webkit-flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content:center;
+    cursor:pointer;
+    background:rgba(83,90,127,1);
+}
+.s-setting-list > div:last-child{ 
+    width:21%;
+    height:0;
+}
+.s-setting-list > div.active{
+    background: linear-gradient(to right,#7629FC,#2B79F7);
+}
+.s-setting-icon{
+    height: 40%;
+    width: 100%;
+    margin-bottom: 8%;
+}
+.s-history-icon{
+    background:url("../image/history-icon.png") center center no-repeat;
+    background-size: auto 100%;
+}
+.s-bookmark-icon{
+    background:url("../image/bookmark-icon.png") center center no-repeat;
+    background-size: auto 100%;
+}
+.s-privacy-icon{
+    background:url("../image/privacy-icon.png") center center no-repeat;
+    background-size: auto 100%;
+}
+.s-account-icon{
+    background:url("../image/account-icon.png") center center no-repeat;
+    background-size: auto 100%;
+}
+.s-security-icon{
+    background:url("../image/security-icon.png") center center no-repeat;
+    background-size: auto 100%;
+}
+.s-about-icon{
+    background:url("../image/about-icon.png") center center no-repeat;
+    background-size: auto 100%;
+}
+.s-exit-icon{
+    background:url("../image/exit-icon.png") center center no-repeat;
+    background-size: auto 100%;
+}
+.s-setting-title{
+    height:15%;
+    font-size: 1.1rem;
+}

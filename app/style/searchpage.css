@@ -1,0 +1,122 @@
+.searchpage-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    /* visibility:hidden; */
+    display: none;
+    overflow: hidden;
+}
+.searchpage {
+    width:100%;
+    height: 100%;
+    background-image: linear-gradient(to right,#1F2234,#313651,#1F2234);
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+    align-items:center;
+    justify-content:space-between;
+}
+/* 设置高度是为了兼容低版本chrome flex为column排版时，子元素无法继承height */
+.s-head{
+    -webkit-flex:1;
+    width:100%;
+    height: 14.28%;
+}
+.s-search{
+    -webkit-flex: 1;
+    width: 100%;
+    height: 14.28%;
+}
+.s-history{
+    -webkit-flex:2;
+    width: 100%;
+    height: 28.56%;
+}
+.s-keyboard{
+    -webkit-flex:3;
+    width: 100%;
+    height: 42.86%;
+}
+.s-search-tab{
+    width:50%;
+    height: 40%;
+    position: relative;
+}
+.s-search-button{
+    width:100%;
+    height: 100%;
+    border-radius: 140px;
+    padding:0 1.5%;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    border:0.3vh solid;
+    border-color:#535A7F;
+    cursor:pointer;
+}
+.s-search-button.active{
+    border-color: #4E54F9;
+}
+
+.s-search-icon{
+    height: 1.6vw;
+    width:1.7vw;
+    background:url("../image/search-icon.webp") no-repeat;
+    background-size:auto 100%;
+    background-position-x: 100%;
+    overflow: hidden;
+}
+.s-search-button.active .s-search-icon{
+    background-size:auto 100%;
+    background-position-x:0%;
+}
+.s-search-button input{
+    width:100%;
+    height: 100%;
+    background-color: transparent;
+    font-size: 1rem;
+    color: rgba(238,238,238,1);
+}
+.s-search-button input::-webkit-input-placeholder{
+    color: rgb(198, 207, 255);
+}
+.s-search-barcode{
+    height:100%;
+    width: 10%;
+    position: absolute;
+    top:0;
+    right: -10%;
+    background: url("../image/barcode.png") right center no-repeat;
+    background-size: auto 100%;
+    cursor:pointer;
+}
+.s-search-barcode.active{
+    background:url("../image/barcode-active.png") right center no-repeat;
+    background-size: auto 100%;
+}
+
+.s-history-list{
+    width:50%;
+    height: 100%;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+.s-history-list > div{
+    width:30%; 
+    height: 20%;
+    margin-bottom:5%;
+    border-radius:144px;
+    display:-webkit-flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    background:#535A7F;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.s-history-list > div.active{
+    background: linear-gradient(to right,#7629FC,#2B79F7);
+}

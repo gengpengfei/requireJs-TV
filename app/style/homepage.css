@@ -1,0 +1,264 @@
+.homepage-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    /* visibility:hidden; */
+    overflow: hidden;
+}
+.homepage {
+    width:100%;
+    height: 100%;
+    background-image: linear-gradient(to right,#1F2234,#313651,#1F2234);
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+    align-items:center;
+    justify-content:space-between;
+}
+/* 设置高度是为了兼容低版本chrome flex为column排版时，子元素无法继承height */
+.h-head{
+    -webkit-flex:1;
+    width:90%;
+    height: 14.28%;
+}
+.h-tab{
+    -webkit-flex: 1;
+    width: 90%;
+    height: 14.28%;
+}
+.h-content{
+    -webkit-flex:4;
+    width: 100%;
+    height: 57.16%;
+}
+.h-footer{
+    -webkit-flex:1;
+    width:90%;
+    height:14.28%;
+}
+
+/* recommend and bookmarks */
+.h-tab-page{
+    -webkit-flex:1;
+    height: 100%;
+}
+.h-tab-focus-button{
+    width:40%;
+    height: 40%;
+}
+.h-button{
+    width:100%;
+    height:100%;
+    color: aliceblue;
+    border-radius: 140px;
+    font-size: 1.5rem;
+    cursor:pointer;
+}
+.h-button.active{
+    background: linear-gradient(to right,#7629FC,#2B79F7);
+}
+.current-line{
+    display: inline-block;
+    width: 0;
+    height: 4%;
+    background: linear-gradient(to right,#7629FC,#2B79F7);
+    -webkit-transition: all 0.4s linear;
+}
+.current-line.current {
+    width:80%;
+}
+
+/* seatch */
+.h-tab-help{
+    height: 100%;
+    width:100%;
+    -webkit-flex:1;
+    display: -webkit-flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+.h-search-button{
+    width:50%;
+    height: 40%;
+    border-radius: 140px;
+    padding:0 1.5%;
+    box-sizing: border-box;
+    border:0.3vh solid;
+    border-color:#535A7F;
+    cursor:pointer;
+}
+.h-search-button.active{
+    border-color: #4E54F9;
+}
+.h-search-icon{
+    height: 1.5vw;
+    width:1.5vw;
+    background:url("../image/search-icon.webp") no-repeat;
+    background-size:auto 100%;
+    background-position-x: 100%;
+    overflow: hidden;
+}
+.h-search-button.active .h-search-icon{
+    background-size:auto 100%;
+    background-position-x:0%;
+}
+/* help and setting */
+.h-tab-focus-img{
+    height:5.7vh;
+    width: 5.7vh;
+    background: #535A7F;
+    border-radius: 144px;
+    cursor:pointer;
+}
+.h-tab-focus-img.active{
+    background: linear-gradient(to right,#7629FC,#2B79F7);
+}
+.h-help-img{
+    width: 100%;
+    height: 100%;
+    background: url("../image/help-img.webp");
+    background-size: auto 100%;
+}
+.h-setting-img{
+    width: 100%;
+    height: 100%;
+    background: url("../image/setting-img.webp");
+    background-size: auto 100%;
+}
+
+/* 九宫格页面 */
+.h-recommended {
+    display: none;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+}
+.h-recommended-list {
+    position:relative;
+    top:0;
+    left:5%;
+    width:135%;
+    height:100%;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    -webkit-transition:all 0.4s linear;
+}
+.h-recommended-list>div{
+    width: 15.85%;
+    height: 47%;
+    margin: 0.4%;
+    background-size: 100% 100%;
+    cursor:pointer;
+    -webkit-transition:all 0.4s linear;
+}
+.h-recommended-list>div>img{
+    width: 100%;
+    height: 100%;
+}
+.h-recommended-list>div.active{
+    -webkit-transform: scale(1.05);
+}
+
+.h-bookmarks {
+    display: none;
+    width:100%;
+    height: 100%;
+}
+.h-bookmarks-content{
+    position: relative;
+    top:0;
+    left:0;
+    height: 90%;
+    -webkit-transition:all 0.4s linear;
+}
+.h-bookmarks-page{
+    width:100%;
+    height: 10%;
+    margin-top:1%;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+}
+.h-bookmarks-list {
+    position:relative;
+    top:0;
+    left:5%;
+    width:90%;
+    height:100%;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.h-bookmarks-list:nth-child(2) {
+    top:-100%;
+    left:95%;
+}
+
+.h-bookmarks-list:nth-child(3) {
+    top:-200%;
+    left:185%;
+}
+.h-bookmarks-list:nth-child(4) {
+    top:-300%;
+    left:275%;
+}
+.h-bookmarks-list>div{
+    width: 19%;
+    height: 100%;
+    margin:0.6%;
+    cursor:pointer;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-transition:all 0.4s linear;
+}
+.h-bookmarks-list>div.active{
+    -webkit-transform: scale(1.05);
+}
+.h-bookmarks-begins{
+    width:9vw;
+    line-height: 9vw;
+    margin-top: 30%;
+    border-radius: 5vw;
+    background:rgba(255,255,255,1);
+    font-size: 7rem;
+    text-align: center;
+    font-weight: 550;
+}
+.h-bookmarks-domain{
+    color:rgba(255,255,255,1);
+    font-size: 2.5rem;
+    font-weight: 550;
+}
+.h-bookmarks-url{
+    background:rgba(0,0,0,1);
+    opacity:0.6;
+    height:20%;
+    /* 使用width:101% , 因为在动画过程中会有1px的背景漏出 */
+    width:101%;
+}
+.h-bookmarks-url>p{
+    width: 80%;
+    height: 70%;
+    line-height: 1.8rem;
+    overflow : hidden;
+    word-break:break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.h-bookmarks-page>div{
+    width:8%;
+    height:15%;
+    border-radius: 50px;
+    background:rgba(91,94,117,1);
+    margin: 0.5%;
+}
+.h-bookmarks-page>div.page-active{
+    background:rgba(138,142,167,1);
+}
+
+

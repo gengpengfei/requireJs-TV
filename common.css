@@ -1,0 +1,154 @@
+html{
+    font-size: 18px;
+    user-select: none;
+    backface-visibility: hidden;
+}
+/* v39 版本不支持，舍弃使用 */
+:root {
+    --DEFAULT-BACKGROUND:linear-gradient(to right,#1F2234,#313651,#1F2234);
+    --THEME-BUTTON: linear-gradient(to right,#7629FC,#2B79F7);
+    --THEME-ACTIVE:#2B79F7;
+}
+*{margin:0; padding:0;color: rgb(218, 218, 218);font-family: 'Segoe UI','Arial';}
+fieldset, img { border: 0; }
+/* remember to define focus styles! */
+:focus { outline: 0; }
+input, button, textarea, select, optgroup, option { font-family: inherit; font-style: inherit; font-weight: inherit; background-color: #fff; border: none;}
+a{text-decoration:none;}
+a:hover{text-decoration: none;}
+
+/* 让子元素不会遮挡父元素的点击事件 */
+.pointer-events {
+    pointer-events: none;
+}
+/* 用于控制模块的显示与隐藏 */
+.module-block{
+    /* visibility:visible !important; */
+    display: block !important;
+}
+/* 用于控制组件的显示与隐藏 */
+.display-block{
+    /* visibility:visible !important; */
+    display: block !important;
+}
+.row-init {
+    display: -webkit-flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.row-start{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+
+.row-center{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+
+.row-end{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-flow: row nowrap;
+}
+
+.row-around{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+}
+
+.row-between{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+.row-top{
+    display: -webkit-flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+
+.column-init {
+    display: -webkit-flex;
+    flex-flow:column nowrap;
+}
+.column-start{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+}
+
+.column-center{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+
+.column-end{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-flow: column nowrap;
+}
+
+.column-around{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+}
+
+.column-between{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+}
+.column-top{
+    display: -webkit-flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+
+.divider-2{
+    width: 2%;
+    height: 0;
+}
+.divider-5 {
+    width:5%;
+    height:0;
+}
+
+.app-container{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+.openImage{
+    width: 100%;
+    height: 100%;
+}
+.ob-pending-bg{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
