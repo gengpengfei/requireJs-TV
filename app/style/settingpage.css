@@ -1,17 +1,15 @@
 .settingpage-container {
     width: 100%;
     height: 100%;
+    background-image: var(--DEFAULT-BACKGROUND);
     position: absolute;
     top:0;
     left:0;
-    /* visibility:hidden; */
-    display: none;
     overflow: hidden;
 }
 .settingpage {
     width:100%;
     height: 100%;
-    background-image: linear-gradient(to right,#1F2234,#313651,#1F2234);
     display: -webkit-flex;
     flex-flow: column nowrap;
     align-items:center;
@@ -41,7 +39,7 @@
 .s-title{
     width:45%;
     height: 40%;
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 .s-setting-list{
@@ -53,10 +51,10 @@
     justify-content: space-between;
     align-content: space-between;
 }
-.s-setting-list > div:not(:last-child){
+.s-setting-list .s-setting-focus{
     width:21%; 
     height: 42%;
-    border-radius:1vw 1vw;
+    border-radius:1.5vh 1.5vh;
     display:-webkit-flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -64,12 +62,8 @@
     cursor:pointer;
     background:rgba(83,90,127,1);
 }
-.s-setting-list > div:last-child{ 
-    width:21%;
-    height:0;
-}
 .s-setting-list > div.active{
-    background: linear-gradient(to right,#7629FC,#2B79F7);
+    background: var(--THEME-BUTTON);
 }
 .s-setting-icon{
     height: 40%;
@@ -77,34 +71,803 @@
     margin-bottom: 8%;
 }
 .s-history-icon{
-    background:url("../image/history-icon.png") center center no-repeat;
+    background:url("../image/common/history-icon.png") center center no-repeat;
     background-size: auto 100%;
 }
 .s-bookmark-icon{
-    background:url("../image/bookmark-icon.png") center center no-repeat;
+    background:url("../image/common/bookmark-icon.png") center center no-repeat;
     background-size: auto 100%;
 }
 .s-privacy-icon{
-    background:url("../image/privacy-icon.png") center center no-repeat;
+    background:url("../image/common/privacy-icon.png") center center no-repeat;
     background-size: auto 100%;
 }
 .s-account-icon{
-    background:url("../image/account-icon.png") center center no-repeat;
+    background:url("../image/common/account-icon.png") center center no-repeat;
     background-size: auto 100%;
 }
 .s-security-icon{
-    background:url("../image/security-icon.png") center center no-repeat;
+    background:url("../image/common/security-icon.png") center center no-repeat;
     background-size: auto 100%;
 }
 .s-about-icon{
-    background:url("../image/about-icon.png") center center no-repeat;
+    background:url("../image/common/about-icon.png") center center no-repeat;
     background-size: auto 100%;
 }
 .s-exit-icon{
-    background:url("../image/exit-icon.png") center center no-repeat;
+    background:url("../image/common/exit-icon.png") center center no-repeat;
     background-size: auto 100%;
 }
 .s-setting-title{
     height:15%;
-    font-size: 1.1rem;
+}
+
+/* bookmarkpage css */
+.bookmarkpage-container {
+    width: 100%;
+    height: 100%;
+    background-image: var(--DEFAULT-BACKGROUND);
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+}
+.bookmarkpage {
+    width:100%;
+    height: 100%;
+}
+/* 设置高度是为了兼容低版本chrome flex为column排版时，子元素无法继承height */
+.b-head{
+    width:100%;
+    height: 14%;
+}
+.b-tab{
+    width: 100%;
+    height: 14%;
+}
+.b-bookmark{
+    width: 100%;
+    height: 62%;
+}
+.b-footer{
+    width: 100%;
+    height: 10%;
+}
+.b-title{
+    width:45%;
+    height: 40%;
+    font-size: 2rem;
+}
+.b-bookmark-clear{
+    width:60%;
+    height: 10%;
+    background:#575B73;
+}
+.b-bookmark-clear-button{
+    width:100%;
+    height: 100%;
+}
+.b-bookmark-clear-button div{
+    margin-left: 2vh;
+}
+.b-bookmark-clear-button.active{
+
+    background: var(--THEME-BUTTON);
+}
+.b-bookmark-list{
+    width:60%;
+    height: 90%;
+    overflow: hidden;
+    margin-top: 1%;
+}
+.b-bookmark-list-container{
+    height: auto;
+    -webkit-transition:all 0.2s linear;
+}
+.b-bookmark-item{
+    height: 5.8vh;
+    position: relative;
+    margin-bottom: 1.1vh;
+}
+
+.b-bookmark-li{
+    width:100%;
+    height:100%;
+    background:#575B73;
+    -webkit-transition:all 0.2s linear;
+}
+.b-bookmark-li>div:nth-child(1){
+    margin-left: 2vh;
+    width:3vh;
+    height:3vh;
+    background: #eee;
+    border-radius: 144px;
+    color: #575B73;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-weight: 600;
+    margin:0 2vh;
+    pointer-events: none;
+}
+.b-bookmark-li>div:nth-child(2){
+    width:15vw;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    pointer-events: none;
+}
+.b-bookmark-li>div:nth-child(3){
+    width:40vw;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    margin-right: 2vh;
+    -webkit-transition:all 0.2s linear;
+    pointer-events: none;
+}
+.b-bookmark-li input{ 
+    font-size: 1rem; 
+    background:none;  
+    outline:none;  
+    border:none;
+    z-index: 9;
+    width:100%;
+    height: 90%;
+}
+.b-bookmark-li input:focus{  
+    background: #575B73;
+}
+.b-bookmark-buttons{
+    width:25.2vh;
+    position: absolute;
+    -webkit-transition:all 0.2s linear;
+    top:0;
+    right: -25.2vh;
+    z-index: 1;
+}
+.b-bookmark-button{
+    height: 5.8vh;
+    width: 5.8vh;
+    background: #575B73;
+    font-size: 2rem;
+    margin-left: 0.5vh;
+}
+.b-bookmark-button img{
+    pointer-events: none;
+    width: 50%;
+    height: 50%;
+}
+
+/* 动画 */
+.b-bookmark-item:hover .b-bookmark-li{
+    width:76%;
+}
+.b-bookmark-item:hover .b-bookmark-li>div:nth-child(3){
+    width:25vw;
+}
+.b-bookmark-item:hover .b-bookmark-buttons{
+    transform: translateX(-25.4vh);
+}
+.b-bookmark-item.transform-focus .b-bookmark-li{
+    width:76%;
+}
+.b-bookmark-item.transform-focus .b-bookmark-li>div:nth-child(3){
+    width:25vw;
+}
+.b-bookmark-item.transform-focus .b-bookmark-buttons{
+    transform: translateX(-25.4vh);
+}
+.b-bookmark-button.active{
+    background: var(--THEME-BUTTON);
+}
+.b-bookmark-li.active{
+    background: var(--THEME-BUTTON);
+}
+
+/* historypage css */
+.historypage-container {
+    width: 100%;
+    height: 100%;
+    background-image: var(--DEFAULT-BACKGROUND);
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+}
+.historypage {
+    width:100%;
+    height: 100%;
+}
+/* 设置高度是为了兼容低版本chrome flex为column排版时，子元素无法继承height */
+.his-head{
+    width:100%;
+    height: 14%;
+}
+.his-tab{
+    width: 100%;
+    height: 14%;
+}
+.his-history{
+    width: 100%;
+    height: 62%;
+}
+.his-footer{
+    width: 100%;
+    height: 10%;
+}
+.his-title{
+    width:45%;
+    height: 40%;
+    font-size: 2rem;
+}
+.his-history-all {
+    width: 60%;
+    height: 10%;
+}
+.his-history-browse{
+    width:48%;
+    height: 100%;
+    background:#575B73;
+}
+.his-history-browse.active{
+    background: var(--THEME-BUTTON);
+}
+.his-history-browse>div:nth-child(1){
+    width:68%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.his-history-browse>div:nth-child(2){
+    width: 6.5vh;
+    height: 50%;
+    border-radius: 144px;
+    background: #EEE;
+    display: flex;
+    align-items: center;
+    padding:0 0.8%;
+}
+.his-history-browse div{
+    pointer-events: none;
+}
+.his-slider{
+    width: 2.5vh;
+    height: 2.5vh;
+    background: #575B73;
+    border-radius: 144px;
+    -webkit-transition:all 0.2s linear;
+}
+.his-history-browse.check .his-slider{
+    background: #2B79F7;
+    transform: translateX(4vh);
+}
+
+.his-history-clear{
+    width:100%;
+    height: 100%;
+    background:#575B73;
+}
+.his-history-clear.active{
+    background: var(--THEME-BUTTON);
+}
+.his-history-list{
+    width:60%;
+    height: 90%;
+    overflow: hidden;
+    margin-top: 1%;
+}
+.his-history-list-container{
+    height: auto;
+    -webkit-transition:all 0.2s linear;
+}
+.his-history-item{
+    height: 5.8vh;
+    position: relative;
+    margin-bottom: 1.1vh;
+}
+
+.his-history-li{
+    width:auto;
+    height:100%;
+    background:#575B73;
+    -webkit-transition:all 0.2s linear;
+}
+.his-history-li>div:nth-child(1){
+    margin-left: 2vh;
+    width:15vh;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    pointer-events: none;
+}
+.his-history-li>div:nth-child(2){
+    width:3vh;
+    height:3vh;
+    background: #eee;
+    border-radius: 144px;
+    color: #575B73;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-weight: 600;
+    margin:0 2vh;
+    pointer-events: none;
+}
+.his-history-li>div:nth-child(3){
+    width:15vw;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    pointer-events: none;
+}
+.his-history-li>div:nth-child(4){
+    width:29vw;
+    margin:0 2vh;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    pointer-events: none;
+}
+.his-history-del{
+    height: 5.8vh;
+    width: 5.8vh;
+    background: #575B73;
+    position: absolute;
+    -webkit-transition:all 0.2s linear;
+    top:0;
+    right: -5.8vh;
+    z-index: 1;
+    font-size: 2rem;
+}
+.his-history-del img{
+    width: 50%;
+    height: 50%;
+}
+.his-history-item:hover .his-history-li{
+    width:94%;
+}
+.his-history-item:hover .his-history-li>div:nth-child(4){
+    width:25vw;
+}
+.his-history-item:hover .his-history-del{
+    transform: translateX(-5.8vh);
+}
+.his-history-item.transform-focus .his-history-li{
+    width:94%;
+}
+.his-history-item.transform-focus .his-history-li>div:nth-child(4){
+    width:25vw;
+}
+.his-history-item.transform-focus .his-history-del{
+    transform: translateX(-5.8vh);
+}
+.his-history-del.active{
+    background: var(--THEME-BUTTON);
+}
+.his-history-li.active{
+    background: var(--THEME-BUTTON);
+}
+
+/* privacypage css */
+
+.privacypage-container {
+    width: 100%;
+    height: 100%;
+    background-image: var(--DEFAULT-BACKGROUND);
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+}
+.privacypage {
+    width:100%;
+    height: 100%;
+}
+/* 设置高度是为了兼容低版本chrome flex为column排版时，子元素无法继承height */
+.p-head{
+    width:100%;
+    height: 14%;
+}
+.p-tab{
+    width: 100%;
+    height: 14%;
+}
+.p-privacy{
+    width: 100%;
+    height: 62%;
+}
+.p-footer{
+    width: 100%;
+    height: 10%;
+}
+.p-title{
+    width:45%;
+    height: 40%;
+    font-size: 2rem;
+}
+.p-privacy-clear{
+    width:60%;
+    height: 45%;
+}
+.p-privacy-clear-button{
+    width:48%;
+    height: 100%;
+    background:#575B73;
+    border-radius:1.5vh 1.5vh;
+    cursor:pointer;
+}
+.p-privacy-clear-button.active{
+    background: var(--THEME-BUTTON);
+}
+.p-privacy-data-icon{
+    width:100%;
+    height: 40%;
+    background: url("../image/common/privacy-icon.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 5%;
+}
+.p-privacy-cookie-icon{
+    width:100%;
+    height: 40%;
+    background: url("../image/common/privacy-icon.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 5%;
+}
+
+/* securitypage css */
+.securitypage-container {
+    width: 100%;
+    height: 100%;
+    background-image: var(--DEFAULT-BACKGROUND);
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+}
+.securitypage {
+    width:100%;
+    height: 100%;
+}
+/* 设置高度是为了兼容低版本chrome flex为column排版时，子元素无法继承height */
+.sec-head{
+    width:100%;
+    height: 14%;
+}
+.sec-tab{
+    width: 100%;
+    height: 14%;
+}
+.sec-security{
+    width: 100%;
+    height: 62%;
+}
+.sec-footer{
+    width: 100%;
+    height: 10%;
+}
+.sec-title{
+    width:45%;
+    height: 40%;
+    font-size: 2rem;
+}
+.sec-security-button{
+    width:60%;
+    height: 10%;
+    background:#575B73;
+    margin-bottom: 1.1vh;
+    box-sizing: border-box;
+    padding:0 2vh;
+}
+.sec-security-button.active{
+    background: var(--THEME-BUTTON);
+}
+.sec-security-button-icon{
+    height: 50%;
+    width: 10%;
+    background: url('../image/common/arrow-icon.webp') no-repeat;
+    background-size: contain;
+    background-position: center right;
+}
+.sec-security-container{
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    right: -100%;
+    -webkit-transition:all 0.2s linear;
+}
+.sec-security-container.show{
+    right: 0%;
+}
+.sec-security-right{
+    width: 35%;
+    height: 100%;
+    background: rgba(49, 53, 81, 1);
+    float: right;
+}
+.sec-security-list{
+    width:50vh;
+    height: 70%;
+    margin:0 auto;
+    overflow: hidden;
+}
+/* .sec-security-ads-button{
+    width:50vh;
+    height: 5.8vh;
+    background:#575B73;
+    margin:15vh auto 6vh auto;
+}
+.sec-security-ads-button.active{
+    background: var(--THEME-BUTTON);
+}
+.sec-security-ads-button>div:nth-child(1){
+    width:68%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.sec-security-ads-button>div:nth-child(2){
+    width: 6.5vh;
+    height: 50%;
+    border-radius: 144px;
+    background: #EEE;
+    display: flex;
+    align-items: center;
+    padding:0 0.8%;
+}
+.sec-security-ads-button div{
+    pointer-events: none;
+} */
+.sec-slider{
+    width: 2.5vh;
+    height: 2.5vh;
+    background: #575B73;
+    border-radius: 144px;
+    -webkit-transition:all 0.2s linear;
+}
+.sec-security-ads-button.check .sec-slider{
+    background: #2B79F7;
+    transform: translateX(4vh);
+}
+
+.sec-security-list-container{
+    width: 50vh;
+    height: auto;
+    -webkit-transition:all 0.2s linear;
+}
+.sec-security-item{
+    height: 5.8vh;
+    width:56.9vh;
+    margin-top: 1.1vh;
+}
+
+.sec-security-li{
+    width:50vh;
+    height:100%;
+    background:#575B73;
+    -webkit-transition:all 0.2s linear;
+}
+.sec-security-li>div:nth-child(1){
+    margin-left: 2vh;
+    width:47vh;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    pointer-events: none;
+}
+.sec-security-del{
+    height: 5.8vh;
+    width: 5.8vh;
+    background: #575B73;
+    font-size: 2rem;
+    margin-left: 1vh;
+}
+.sec-security-del img{
+    width: 50%;
+    height: 50%;
+}
+
+.sec-security-item:hover .sec-security-li{
+    width:43vh;
+}
+
+.sec-security-item.transform-focus .sec-security-li{
+    width:43vh;
+}
+
+.sec-security-del.active{
+    background: var(--THEME-BUTTON);
+}
+.sec-security-li.active{
+    background: var(--THEME-BUTTON);
+}
+
+.sec-security-webpage-title,.sec-security-ads-title{
+    width:50vh;
+    height: 5.8vh;
+    margin:15vh auto 6vh auto;
+}
+
+/* accountpage css */
+.accountpage-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+.accountpage{
+    width: 100%;
+    height: 100%;
+}
+.a-left{
+    width: 50%;
+    height: 100%;
+}
+.a-account{
+    width: 50%;
+    height: 50%;
+}
+.a-account-list{
+    width:60%;
+    height: 100%;
+}
+.a-account-button{
+    width: 100%;
+    height: 15%;
+    border-radius: 144px;
+    padding:0 6%;
+    box-sizing: border-box;
+    background: var(--THEME-BUTTON-DEFAULT);
+}
+.a-account-button.active{
+    background: var(--THEME-BUTTON);
+}
+.a-account-button .a-icon{
+    opacity: 0;
+}
+.a-account-button.active .a-icon{
+    opacity: 1;
+}
+
+/* signinpage css */
+.signinpage-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+.signinpage{
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+}
+.si-right{
+    width: 50%;
+    height: 100%;
+}
+.si-signin{
+    width: 50%;
+    height: 100%;
+}
+.si-signin-title{
+    height: 7.5%;
+    width: 90%;
+    font-size: 1.3rem;
+}
+.si-signin-msg{
+    height: 7.5%;
+    width: 90%;
+    font-size: 2rem;
+}
+
+.si-signin-button{
+    margin: 5% 0;
+    height: 7.5%;
+    width:90%;
+    border-radius: 144px;
+    padding:0 6%;
+    box-sizing: border-box;
+    background: var(--THEME-BUTTON-DEFAULT);
+}
+.si-signin-button.active{
+    background: var(--THEME-BUTTON);
+}
+.si-signin-button input{
+    width:100%;
+    height: 100%;
+    font-size: 1rem;
+    color: rgb(198, 207, 255);
+}
+.si-signin-button input::-webkit-input-placeholder{
+    color: rgb(198, 207, 255);
+}
+.si-signin-forget-button{
+    height: 4%;
+    width:50%;
+    border-radius: 144px;
+    border:0.1rem solid rgba(87, 91, 115, 1);
+}
+.si-signin-forget-button.active div{
+    color: var(--THEME-L);
+}
+
+
+/* signuppage css */
+.signuppage-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+.signuppage{
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+}
+.su-right{
+    width: 50%;
+    height: 100%;
+}
+.su-signup{
+    width: 50%;
+    height: 100%;
+}
+.su-signup-title{
+    height: 7.5%;
+    width: 90%;
+    font-size: 1.3rem;
+}
+.su-signup-msg{
+    height: 7.5%;
+    width: 90%;
+    font-size: 2rem;
+}
+
+.su-signup-button{
+    margin: 5% 0;
+    height: 7.5%;
+    width:90%;
+    border-radius: 144px;
+    padding:0 6%;
+    box-sizing: border-box;
+    background: var(--THEME-BUTTON-DEFAULT);
+}
+.su-signup-button.active{
+    background: var(--THEME-BUTTON);
+}
+.su-signup-button input{
+    width:100%;
+    height: 100%;
+    font-size: 1rem;
+    color: rgb(198, 207, 255);
+}
+.su-signup-button input::-webkit-input-placeholder{
+    color: rgb(198, 207, 255);
+}
+.su-signup-forget-button{
+    height: 4%;
+    width:50%;
+    border-radius: 144px;
+    border:0.1rem solid rgba(87, 91, 115, 1);
+}
+.su-signup-forget-button.active div{
+    color: var(--THEME-L);
 }

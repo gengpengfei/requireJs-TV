@@ -1,20 +1,20 @@
 .homepage-container {
     width: 100%;
     height: 100%;
+    background-image: var(--DEFAULT-BACKGROUND);
     position: absolute;
     top:0;
     left:0;
-    /* visibility:hidden; */
     overflow: hidden;
 }
 .homepage {
     width:100%;
     height: 100%;
-    background-image: linear-gradient(to right,#1F2234,#313651,#1F2234);
     display: -webkit-flex;
     flex-flow: column nowrap;
     align-items:center;
     justify-content:space-between;
+    transform: none;
 }
 /* 设置高度是为了兼容低版本chrome flex为column排版时，子元素无法继承height */
 .h-head{
@@ -52,18 +52,18 @@
     height:100%;
     color: aliceblue;
     border-radius: 140px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor:pointer;
 }
 .h-button.active{
-    background: linear-gradient(to right,#7629FC,#2B79F7);
+    background: var(--THEME-BUTTON);
 }
 .current-line{
     display: inline-block;
     width: 0;
-    height: 4%;
-    background: linear-gradient(to right,#7629FC,#2B79F7);
-    -webkit-transition: all 0.4s linear;
+    height: 5%;
+    background: var(--THEME-BUTTON);
+    -webkit-transition: all 0.2s linear;
 }
 .current-line.current {
     width:80%;
@@ -75,33 +75,24 @@
     width:100%;
     -webkit-flex:1;
     display: -webkit-flex;
-    align-items: flex-start;
     justify-content: flex-end;
 }
 .h-search-button{
     width:50%;
     height: 40%;
+    background: #535A7F;
     border-radius: 140px;
-    padding:0 1.5%;
-    box-sizing: border-box;
-    border:0.3vh solid;
-    border-color:#535A7F;
+    padding:0 2%;
     cursor:pointer;
 }
-.h-search-button.active{
-    border-color: #4E54F9;
-}
 .h-search-icon{
-    height: 1.5vw;
-    width:1.5vw;
-    background:url("../image/search-icon.webp") no-repeat;
+    height:3vh;
+    width:3vh;
+    background:url("../image/common/search-icon.webp") no-repeat;
     background-size:auto 100%;
-    background-position-x: 100%;
-    overflow: hidden;
 }
-.h-search-button.active .h-search-icon{
-    background-size:auto 100%;
-    background-position-x:0%;
+.h-search-button.active{
+    background: var(--THEME-BUTTON);
 }
 /* help and setting */
 .h-tab-focus-img{
@@ -112,19 +103,18 @@
     cursor:pointer;
 }
 .h-tab-focus-img.active{
-    background: linear-gradient(to right,#7629FC,#2B79F7);
+    background: var(--THEME-BUTTON);
 }
-.h-help-img{
+.h-help-img , .h-setting-img{
     width: 100%;
     height: 100%;
-    background: url("../image/help-img.webp");
     background-size: auto 100%;
 }
-.h-setting-img{
-    width: 100%;
-    height: 100%;
-    background: url("../image/setting-img.webp");
-    background-size: auto 100%;
+.h-help-img-bg {
+    background-image: url("../image/common/help-img.webp");
+}
+.h-setting-img-bg{
+    background-image: url("../image/common/setting-img.webp");
 }
 
 /* 九宫格页面 */
@@ -132,7 +122,6 @@
     display: none;
     width:100%;
     height: 100%;
-    overflow: hidden;
 }
 .h-recommended-list {
     position:relative;
@@ -142,22 +131,28 @@
     height:100%;
     display: -webkit-flex;
     flex-flow: row wrap;
-    -webkit-transition:all 0.4s linear;
+    justify-content: space-between;
+    align-content: space-between;
+    -webkit-transition:all 0.3s linear;
 }
 .h-recommended-list>div{
-    width: 15.85%;
+    width: 15.5%;
     height: 47%;
-    margin: 0.4%;
-    background-size: 100% 100%;
+    overflow: hidden;
     cursor:pointer;
-    -webkit-transition:all 0.4s linear;
+    -webkit-transition:all 0.1s linear;
+    display:-webkit-flex;
+    justify-content: center;
+    align-items: center;
 }
-.h-recommended-list>div>img{
-    width: 100%;
-    height: 100%;
-}
+
 .h-recommended-list>div.active{
-    -webkit-transform: scale(1.05);
+    -webkit-transform: scale(1.12);
+    -moz-box-shadow:0px 0.5rem 2rem #000000; -webkit-box-shadow:0px 0.5rem 2rem #000000; box-shadow:0px 0.5rem 2rem #000000;
+}
+.h-recommended-list>div img{
+	width:100%;
+	height:100%;
 }
 
 .h-bookmarks {
@@ -170,7 +165,7 @@
     top:0;
     left:0;
     height: 90%;
-    -webkit-transition:all 0.4s linear;
+    -webkit-transition:all 0.2s linear;
 }
 .h-bookmarks-page{
     width:100%;
@@ -213,36 +208,48 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
-    -webkit-transition:all 0.4s linear;
+    -webkit-transition:all 0.1s linear;
 }
 .h-bookmarks-list>div.active{
-    -webkit-transform: scale(1.05);
+    -webkit-transform: scale(1.06);
+    -moz-box-shadow:0px 0.5rem 2rem #000000; -webkit-box-shadow:0px 0.5rem 2rem #000000; box-shadow:0px 0.5rem 2rem #000000;
 }
 .h-bookmarks-begins{
-    width:9vw;
-    line-height: 9vw;
+    width:16vh;
+    height: 16vh;
     margin-top: 30%;
-    border-radius: 5vw;
+    border-radius: 8vh;
     background:rgba(255,255,255,1);
-    font-size: 7rem;
+    font-size: 6rem;
     text-align: center;
     font-weight: 550;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateZ(0);
 }
 .h-bookmarks-domain{
     color:rgba(255,255,255,1);
     font-size: 2.5rem;
     font-weight: 550;
+    transform: translateZ(0);
+    width: 90%;
+    overflow: hidden;
+    text-align: center;
 }
 .h-bookmarks-url{
     background:rgba(0,0,0,1);
     opacity:0.6;
     height:20%;
-    /* 使用width:101% , 因为在动画过程中会有1px的背景漏出 */
-    width:101%;
+    width:100%;
+    transform: translateZ(0);
 }
 .h-bookmarks-url>p{
     width: 80%;
-    height: 70%;
+    max-height: 70%;
+    display: flex;
+    text-align: center;
+    align-items: center;
     line-height: 1.8rem;
     overflow : hidden;
     word-break:break-all;

@@ -1,9 +1,11 @@
 define({
     //-- 可支持的语言
-    "zh-cn": true,
+    "zh-cn": false,
     "zh-tw":true,
-    //-- 默认语言配置项
-    "root": {
+    "root":{
+        "100% Zoom":"100% Zoom",
+        "150% Zoom":"150% Zoom",
+        "200% Zoom":"200% Zoom",
         "A script on this page is slowing down the browser. Do you want to disable JavaScript for this page?":"A script on this page is slowing down the browser. Do you want to disable JavaScript for this page?",
         "About":"About",
         "Add to Bookmarks":"Add to Bookmarks",
@@ -26,8 +28,10 @@ define({
         "Cancel":"Cancel",
         "Certificate":"Certificate",
         "Change Zoom in Menu > Settings":"Change Zoom in Menu > Settings",
+        "Clear All Browsing Data":"Delete all browsing data",
         "Clear History":"Clear History",
-        "Clear All Cookies":"Clear All Cookies",
+        "Clear All Cookies":"Delete All Cookies",
+        "Clear All Bookmark":"Delete all bookmarks",
         "Close":"Close",
         "Close Current Tab":"Close Current Tab",
         "Close Tab":"Close Tab",
@@ -48,6 +52,9 @@ define({
         "Delete":"Delete",
         "Delete Speed Dial Entry?":"Delete Speed Dial Entry?",
         "Delete Bookmark?":"Delete Bookmark?",
+        "Disable Ads":"Disabled ads",
+        "Disable All Page Ads":"Disable all page ads",
+        "Disable Webpage":"Disable webpage",
         "Do you want to clear history?":"Do you want to clear history?",
         "Close Opera TV Browser?":"Close Opera TV Browser?",
         "Do you want to close the tab \"$title\"?":"Do you want to close the tab \"$title\"?",
@@ -83,11 +90,14 @@ define({
         "Opera Help":"Opera Help",
         "Page Security":"Page Security",
         "Password":"Password",
+        "Forget your password" : "Forget your password",
         "Please fill in both name and address fields":"Please fill in both name and address fields",
+        "Privacy":"Privacy",
         "Move <b>Up</b> to access the address bar":"Move <b>Up</b> to access the address bar",
         "Reload":"Reload",
         "Restore Default Settings":"Restore Default Settings",
         "Saturday":"Saturday",
+        "SeamlessBrowsingMode":"Seamless browsing mode",
         "Secure Connection":"Secure Connection",
         "Security Information":"Security Information",
         "Select a Speed Dial entry to edit":"Select a Speed Dial entry to edit",
@@ -97,6 +107,12 @@ define({
         "Select action":"Select action",
         "Settings":"Settings",
         "Show All History":"Show All History",
+        "Sign in" : "Sign in",
+        "Sign up" : "Sign up",
+        "Sign in with Google" : "Sign in with Google",
+        "Use your phone or Laptop" : "Use your phone or Laptop",
+        "Enter Username or Email":"Enter Username or Email",
+        "Username or Email" : "Username or Email",
         "Speed Dial":"Speed Dial",
         "Speed Dial Error":"Speed Dial Error",
         "Speed Dial entry modified":"Speed Dial entry modified",
@@ -120,6 +136,10 @@ define({
         "Wednesday":"Wednesday",
         "Yesterday":"Yesterday",
         "You cannot open additional tabs":"You cannot open additional tabs",
+        "Zoom":"Zoom",
+        "Zoom 100%":"Zoom 100%",
+        "Zoom 150%":"Zoom 150%",
+        "Zoom 200%":"Zoom 200%",
         "address":"address",
         "name":"name",
         "Bookmark not saved: the address is too long":"Bookmark not saved: the address is too long",
@@ -140,8 +160,7 @@ define({
         "The input address may be incorrect; check if the address is correct":"The input address may be incorrect; check if the address is correct",
         "The system is out of memory":"The system is out of memory",
         "The browser has returned to the Home page due to low system memory":"The browser has returned to the Home page due to low system memory",
-        "Privacy":"privacy",
-        "Account":"account",
-        "Security":"security"
-    }
+		"Account":"Account",
+        "Security":"Security"
+    }    
 });
