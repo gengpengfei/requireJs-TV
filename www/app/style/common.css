@@ -1,0 +1,146 @@
+html{ user-select: none; backface-visibility: hidden;}
+*{margin:0;  padding:0; color: rgb(218, 218, 218); font-family: "Segoe UI","Arial";}
+:focus { outline: 0; }
+input, button, textarea, select, optgroup, option { font-family: inherit; font-style: inherit; font-weight: inherit; border: none;background-color: transparent;}
+a{text-decoration:none;}
+a:hover{text-decoration: none;}
+/* v49 版本以上支持 */
+:root {
+    --DEFAULT-BACKGROUND:linear-gradient(to right,#1F2234,#313651,#1F2234);
+    --THEME-BUTTON: linear-gradient(to right,#7629FC,#2B79F7);
+    --THEME-BUTTON-DEFAULT:#575B73;
+    --THEME-L:#2B79F7;
+    --PAGE-GAP:3rem;
+}
+body{
+    background-image: var(--DEFAULT-BACKGROUND);
+}
+/* 480p */
+@media screen and (max-width: 855px){
+    html,body{font-size: 12px;}
+}
+/* 720p */
+@media screen and (min-width: 856px) and (max-width:1281px){
+    html,body{ font-size: 18px;}
+}
+/* 1080p */
+@media screen and (min-width: 1282px) and (max-width:1921px){
+    html,body{ font-size: 27px;}
+}
+/* 4K */
+@media screen and (min-width: 1922px){
+    html,body{font-size: 54px;}
+}
+/* 让子元素不会遮挡父元素的点击事件 */
+.pointer-events {
+    pointer-events: none;
+}
+/* 用于控制模块的显示与隐藏 */
+.module-block{
+    display:block !important;
+}
+.module-none{
+    display:none !important;
+}
+/* 用于控制组件的显示与隐藏 */
+.display-block{
+    display: block !important;
+}
+.display-none{
+    display: none !important;
+}
+.row-init {
+    display: -webkit-flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.row-start{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+}
+.row-center{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+.row-between{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+.row-around{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+}
+.row-top{
+    display: -webkit-flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+.column-top{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: start;
+    flex-flow: column nowrap;
+}
+.column-start{
+    display: -webkit-flex;
+    align-items: start;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+.column-around{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+}
+.column-center{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+.column-between{
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+}
+.divider-2{
+    width: 2%;
+    height: 0;
+}
+.divider-5 {
+    width:5%;
+    height:0;
+}
+
+.app-container{
+    width: 100%;
+    height: 100%;
+    z-index:0;
+    overflow: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.ob-pending-bg{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.ob-pending-bg img{
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,89 @@
+.page-container {
+    width: 100%;
+    height: 100%;
+    background-image: var(--DEFAULT-BACKGROUND);
+    overflow: hidden;
+    display: none;
+}
+.selbookmarkpage {
+    width:100%;
+    height: 100%;
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+    align-items:center;
+    justify-content:space-between;
+}
+.sel-head{
+    width:100%;
+    height: 12%;
+}
+.sel-tab{
+    width: 100%;
+    height: 15%;
+}
+.sel-content{
+    width: 100%;
+    height: 45%;
+}
+.sel-footer{
+    width: 100%;
+    height: 18%;
+    position: relative;
+}
+.sel-title {
+    font-size: 1.5rem;
+}
+.sel-bookmark-list{
+    width: 80%;
+    height: 100%;
+    flex-wrap: wrap;
+}
+.sel-bookmark-item {
+    width:27%;
+    height:20%;
+    margin: 0 3%;
+    background-color: rgba(83, 90, 127, 1);
+    border-radius: 5rem;
+    padding: 0 2%;
+    box-sizing: border-box;
+}
+.sel-bookmark-title {
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    pointer-events: none;
+}
+.sel-check-button {
+    max-width: 5vh;
+    min-width: 5vh;
+    height: 5vh;
+    background: rgba(46, 51, 79, 1);
+    border-radius: 50%;
+}
+.sel-bookmark-item.active .sel-check-button img{
+    opacity: 1;
+}
+.sel-check-button img{
+    width: 50%;
+    height: 40%;
+    opacity: 0;
+}
+.sel-next-button{
+    width: 18%;
+    height: 40%;
+    font-size: 1.5rem;
+    border-radius: 5rem;
+    background:rgba(83, 90, 127, 1);
+}
+.sel-skip-button{
+    width: 18%;
+    height: 40%;
+    font-size: 1.5rem;
+    border-radius: 5rem;
+    position: absolute;
+    top:0;
+    right: 10%;
+}
+.selbookmarkpage .focusable:focus {
+    background: var(--THEME-BUTTON);
+}
